@@ -1,0 +1,24 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div style="padding: 0px 15px;">
+        <h3>Enter the code to verify your phone</h3>
+        <p class="bellowText">We have sent an SMS with a code us your mobile number</p>
+        <div style="padding: 30px 15px 5px;">
+            <ion-list lines="full" class="ion-no-margin ion-no-padding">
+                <div class="formList">
+                    <ion-input [(ngModel)]="mobileotp.firebasemobileotp"></ion-input>
+                </div>
+            </ion-list>
+        </div>
+        <div>
+            <ion-text class="loginBtn" color="cart" (click)="otpsubmit()">Verify</ion-text>
+        </div>
+    </div>
+</ion-content>

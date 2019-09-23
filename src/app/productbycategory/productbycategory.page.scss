@@ -1,0 +1,27 @@
+ion-buttons {
+    ion-icon {
+        color: #000;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+ion-header ion-toolbar ion-buttons .fa-shopping-basket {
+    padding-right: 27px;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+ion-badge#cart-badge {
+    background: #000000;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-top: -7px;
+    position: absolute;
+    font-size: 11px;
+    padding: 7px 0px;
+    right: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.09);
+    margin-left: -3px;
+}

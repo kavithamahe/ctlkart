@@ -1,0 +1,36 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="dashboard">
+        <ion-icon name="home"></ion-icon>
+        <p class="tab-list">Home</p>
+    </ion-tab-button>
+
+    <ion-tab-button tab="category">
+        <ion-icon name="cube"></ion-icon>
+        <p class="tab-list">Category</p>
+    </ion-tab-button>
+
+    <ion-tab-button tab="viewcartproduct">
+        <ion-badge id="cart-badge" color="danger" *ngIf = "cartDetails">{{cartcount}}</ion-badge>
+        <ion-icon name="basket"></ion-icon>
+        <p class="tab-list">Cart</p>
+    </ion-tab-button>
+    <ion-tab-button tab="profile" *ngIf="token">
+        <ion-icon name="person"></ion-icon>
+        <p class="tab-list">Profile</p>
+    </ion-tab-button>
+    <ion-tab-button tab="checkout" *ngIf="!token">
+        <ion-icon name="person"></ion-icon>
+        <p class="tab-list">Profile</p>
+    </ion-tab-button>
+    <ion-tab-button tab="myorders" *ngIf="token">
+        <ion-icon name="person"></ion-icon>
+        <p class="tab-list">Orders</p>
+    </ion-tab-button>
+    <ion-tab-button>
+        <ion-menu-button autoHide="false"></ion-menu-button>
+        <p class="tab-list">More</p>
+    </ion-tab-button>
+</ion-tab-bar>
+
+</ion-tabs>

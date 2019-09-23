@@ -1,0 +1,61 @@
+ion-header {
+    box-shadow: none;
+    ion-buttons {
+        ion-icon {
+            color: #000;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+    }
+}
+
+.loginTitle {
+    font-weight: 600;
+    padding: 0px 14px 15px;
+    letter-spacing: 0.5px;
+}
+
+ion-content {
+    form {
+        padding: 10px 15px;
+        ion-list {
+            .formList {
+                padding: 0px 0px 10px;
+                ion-label {
+                    color: #9b9b9b;
+                    display: inline-block;
+                    font-size: 12px;
+                    margin-bottom: 5px;
+                    ion-text {
+                        color: #ff0000;
+                    }
+                }
+                ion-input {
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+            p {
+                color: #ff0000;
+                font-size: 12px;
+                margin: 0;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+.registerBtn {
+    color: #000;
+    background: #fff;
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    span {
+        color: #fca411;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,56 @@
+.categoryList {
+    .inner-scroll {
+        background: #f6f9ff;
+    }
+    ion-list {
+        display: inline-block;
+        width: 91%;
+        vertical-align: top;
+        background: #fff;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.09);
+        margin: 2px 15px 2px 16px;
+        padding: 10px 4px;
+        border-radius: 5px;
+        div {
+            box-shadow: none;
+            display: inline-block;
+            width: 100%;
+            /* text-align: center; */
+            ion-avatar {
+                width: 90px;
+                height: 90px;
+                overflow: hidden;
+                margin: 0 auto;
+                border: 3px solid #e8e8e8;
+                background: #e8e8e8;
+            }
+            ion-label {
+                text-transform: capitalize;
+                font-size: 14px;
+                font-weight: 500;
+                color: #000;
+                letter-spacing: 0.5px;
+                margin: 5px 10px 0 10px;
+                display: block;
+                line-height: 18px;
+                span {
+                    text-align: right;
+                    float: right;
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}
+
+.subCat {
+    padding: 20px 0;
+}
+
+ion-buttons {
+    ion-icon {
+        color: #000;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}

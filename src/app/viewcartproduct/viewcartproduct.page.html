@@ -1,0 +1,72 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-title>My Cart</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="mar-bt140">
+        <div class="cartProduct" *ngFor="let single of getcartProductList">
+            <div class="mycartProduct" *ngIf="cartcount != 0 || cartDetails != null">
+                <div class="productImage">
+                    <ion-thumbnail slot="start">
+                        <img [src]="imgURl + single.product_image">
+                    </ion-thumbnail>
+                </div>
+                <div class="productContent">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="8">
+                                <h3>{{single.product_name}}</h3>
+                            </ion-col>
+                            <ion-col size="4">
+                                <p color="warning"><i class="fa fa-inr"></i>{{single.price | number : '1.2-2'}}</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size="8">
+                                <div class="quantity">
+                                    <button clear (click)="decrementQty(single.quantityperproduct,single.id)"><ion-icon name="remove" ></ion-icon></button><span>{{single.quantityperproduct}}</span>
+                                    <button clear (click)="incrementQty(single.quantityperproduct,single.id,single.quantity)"><ion-icon name="add" ></ion-icon></button>
+                                </div>
+                            </ion-col>
+                            <ion-col size="4">
+                                <span (click)="presentAlertConfirm(single.id)" class="closeBtn"><ion-icon name="close"></ion-icon></span>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-card" *ngIf="cartDetails && cartcount != '0'">
+        <ion-grid>
+            <ion-row class="final-total">
+                <ion-col size="7">
+                    <ion-label>
+                        <h3>Subtotal ( {{selectedlength}} items)</h3>
+                        <!-- <h3>Subtotal ({{selectedlength}} items): <b><i class="fa fa-inr"></i> {{totalamount | number : '1.2-2'}}</b></h3> -->
+                    </ion-label>
+                </ion-col>
+                <ion-col size="5">
+                    <p><i class="fa fa-inr"></i> {{totalamount | number : '1.2-2'}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-text class="loginBtn" (click)="proceedtobuy()">Check Out</ion-text>
+    </div>
+
+    <div class="EmptyCart" *ngIf="cartcount == 0 || cartDetails == null">
+        <div class="profile-img">
+            <img src="assets/img/broken-image.png" />
+        </div>
+        <p class="name">Nothing here yet</p>
+        <p class="mail">
+            <ion-text class="shopBtn" (click)="shopnow()">Shop your products</ion-text>
+        </p>
+    </div>
+
+</ion-content>

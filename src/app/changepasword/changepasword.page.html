@@ -1,0 +1,26 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-title>Changepassword</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding border-input">
+        <ion-item>
+            <ion-input class="currentpassword" type="text" placeholder="Current Password" [(ngModel)]="password.currentpassword"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input class="newpassword" type="text" placeholder="New Password" [(ngModel)]="password.newpassword"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input class="confirmpassword" type="text" placeholder="Confirm New Password" [(ngModel)]="password.confirmpassword"></ion-input>
+        </ion-item>
+
+    </div>
+    <div padding>
+        <ion-text class="loginBtn" color="cart" (click)="changePassword()">Submit</ion-text>
+    </div>
+</ion-content>

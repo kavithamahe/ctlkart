@@ -1,0 +1,54 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <!-- <ion-menu-button autoHide="false"></ion-menu-button> -->
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-title>Manage Address</ion-title>
+        <!-- <ion-buttons slot="end" (click)="viewcart()">
+            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            <ion-badge id="cart-badge" color="danger">{{cartcount}}</ion-badge>
+        </ion-buttons> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button class="addCircle" (click)="addaddress()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-grid *ngFor="let address of getaddresslist">
+        <ion-row>
+            <ion-col>
+                <div class="addressColumn">
+                    <!-- <ul>
+                        <li>
+                            <ion-text class="editBtn" (click)="presentAlertConfirm(address.id)"><i class="fa fa-trash"></i></ion-text>
+                        </li>
+                        <li>
+                            <ion-text class="editBtn" (click)="editaddress(address.id)"><i class="fa fa-pencil"></i></ion-text>
+                        </li>
+                    </ul> -->
+                    <div class="manageAd">
+                        <p text-capitalize><b>{{address.name}}</b></p>
+                        <ion-badge>{{address.address_type}}</ion-badge>
+                        <p>{{address.mobile}}</p>
+                        <p text-capitalize>{{address.address}}</p>
+                        <p text-capitalize>{{address.landmark}}</p>
+                        <p text-capitalize>{{address.city}}</p>
+                        <p text-capitalize>{{address.state}} - {{address.zipcode}}</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <ion-text class="DeleteBtn" (click)="presentAlertConfirm(address.id)">Delete</ion-text>
+                        </li>
+                        <li>
+                            <ion-text class="editBtn" (click)="editaddress(address.id)">Edit</ion-text>
+                        </li>
+                    </ul>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

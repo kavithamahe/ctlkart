@@ -1,0 +1,240 @@
+.cartBuyBtn {
+    color: #000;
+}
+
+ion-content {
+    padding-bottom: 140px;
+}
+
+.mar-bt140 {
+    padding-bottom: 140px;
+}
+
+.cartProduct {
+    ion-item {
+        ion-label {
+            h3 {
+                font-size: 16px;
+                font-weight: 700;
+                padding: 10px 0px 0px;
+                color: #000;
+            }
+            p {
+                padding: 1px;
+                margin: 0;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+                // color: #fca411;
+                color: #000;
+            }
+        }
+        ion-item {
+            button {
+                background: #607D8B;
+                color: #fff;
+                padding: 5px;
+                font-size: 16px;
+                margin: 5px 0;
+                border-radius: 0 !important;
+                box-shadow: none;
+                outline: none;
+            }
+            span {
+                background: #f2f2f2;
+                padding: 5px 15px;
+                color: #000;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+ion-buttons {
+    ion-icon {
+        color: #000;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+.cartProduct {
+    display: block;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    padding: 6px;
+    margin: 8px;
+    border-radius: 5px;
+    .mycartProduct {
+        display: flex;
+        .productImage {
+            width: 20%;
+            background: #fff4de;
+            padding: 10px 10px 18px;
+            display: inline-block;
+            ion-thumbnail {
+                width: 100%;
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+        .productContent {
+            width: 80%;
+            ion-grid {
+                ion-row {
+                    ion-col {
+                        h3 {
+                            font-size: 16px;
+                            color: #333;
+                            padding: 0;
+                            margin: 0;
+                            font-weight: 600;
+                            text-transform: capitalize;
+                        }
+                        p {
+                            padding: 0;
+                            margin: 0;
+                            font-weight: 600;
+                            color: #fca411;
+                            font-size: 14px;
+                            letter-spacing: 0.2px;
+                            text-align: right;
+                        }
+                        .quantity {
+                            display: flex;
+                            button {
+                                background: #efefef;
+                                color: #000;
+                                padding: 5px;
+                                border-radius: 50%;
+                                font-size: 12px;
+                                margin: 5px 0 5px;
+                                width: 30px;
+                                height: 30px;
+                                // border-radius: 0 !important;
+                                box-shadow: none;
+                                outline: none;
+                            }
+                            span {
+                                background: #ffffff;
+                                padding: 12px 15px;
+                                color: #666;
+                                font-weight: 600;
+                                font-size: 14px;
+                            }
+                        }
+                        .closeBtn {
+                            background: #efefef;
+                            color: #333;
+                            padding: 4px 4px 1px 4px;
+                            margin: 3px 0 0 0;
+                            display: inline-block;
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subtoatalValue {
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    margin: 10px;
+    border-radius: 4px;
+    h2 {
+        color: #666;
+        margin: 0 0 8px;
+        padding: 5px 0 10px 0;
+        font-size: 17px;
+        text-align: center;
+        border-bottom: 1px dotted #999;
+    }
+    ion-grid {
+        ion-row {
+            ion-col {
+                h6 {
+                    font-size: 14px;
+                    color: #666;
+                }
+                p {
+                    padding: 0;
+                    margin: 0;
+                    font-weight: 600;
+                    color: #666;
+                    font-size: 14px;
+                    letter-spacing: 0.1px;
+                    text-align: right;
+                    &.text-success {
+                        color: #048e04;
+                    }
+                }
+            }
+            &.final-total {
+                border-top: 1px dotted #999;
+                padding: 10px 0 0;
+                margin: 5px 0 0 0;
+                h3 {
+                    font-size: 16px;
+                    color: #333;
+                    padding: 0;
+                    margin: 0;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+                p {
+                    padding: 0;
+                    margin: 0;
+                    font-weight: 600 !important;
+                    color: #fca411 !important;
+                    font-size: 15px !important;
+                    letter-spacing: 0.1px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.loginBtn {
+    display: block;
+    background: #fca411;
+    color: #fff;
+    padding: 13px 5px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19);
+    text-transform: uppercase;
+}
+
+.EmptyCart {
+    .profile-img {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0 0;
+        img {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    }
+    .name {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        color: #999;
+    }
+    .mail {
+        color: #fca411;
+        text-align: center;
+        font-weight: 500;
+        font-size: 17px;
+        text-transform: none;
+        letter-spacing: 0.5px;
+    }
+}

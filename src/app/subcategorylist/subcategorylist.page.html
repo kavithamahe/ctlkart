@@ -1,0 +1,27 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start" *ngIf="!toggled">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-title *ngIf="!toggled">{{title}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon class="searchIcOn" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
+        </ion-buttons>
+        <ion-searchbar *ngIf="toggled" [(ngModel)]="term.searchText" (keyup.enter)="getItems(term.searchText)" (ionCancel)="cancelSearch($event)" (ionClear)="cancelSearch($event)" [showCancelButton]="true">
+        </ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="categoryList">
+    <div class="subCat">
+        <ion-list *ngFor="let subcategory of getallsubcategory">
+            <div class="item item-icon-left" (click)="getsubcategory(subcategory.id,subcategory.subcategory_name)">
+
+                <ion-label>{{subcategory.subcategory_name}} <span class="item-note">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </span></ion-label>
+
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

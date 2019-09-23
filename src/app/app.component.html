@@ -1,0 +1,24 @@
+<ion-app>
+    <ion-menu side="end" menuId="first">
+        <ion-header>
+            <ion-toolbar color="light">
+                <ion-title>Ctl<span>kart</span></ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <!-- <ion-item (click)="home()">Home</ion-item>
+                <ion-item (click)="shopbycategory()">Shop By Category</ion-item> -->
+                <ion-item (click)="getmyorders()" *ngIf="showButton || token">My Order</ion-item>
+                <ion-item (click)="viewaccount()">Term & condtions</ion-item>
+                <ion-item (click)="viewaccount()">Help</ion-item>
+                <!-- <ion-item (click)="logout()" *ngIf="showButton || token">Logout</ion-item> -->
+                <ion-item (click)="login()" *ngIf="!token">Login</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet main></ion-router-outlet>
+
+
+</ion-app>

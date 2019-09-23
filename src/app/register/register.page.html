@@ -1,0 +1,60 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bgWhite">
+    <h3 class="loginTitle">Sign Up</h3>
+    <form [formGroup]="registerForm">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <div class="formList">
+                <ion-label position="floating">First Name
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input formControlName="firstname" required type="text"></ion-input>
+            </div>
+            <p *ngIf="!registerForm.controls.firstname.valid && (registerForm.controls.firstname.dirty || submitAttempt)" class="err-reds shake">Please enter firstname.</p>
+
+            <div class="formList">
+                <ion-label position="floating">Last Name
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="lastname"></ion-input>
+            </div>
+            <p *ngIf="!registerForm.controls.lastname.valid && (registerForm.controls.lastname.dirty || submitAttempt)" class="err-reds shake">Please enter lastname.</p>
+            <div class="formList">
+                <ion-label position="floating">Email
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="email" formControlName="email"></ion-input>
+            </div>
+            <p *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)" class="err-reds shake">Please enter email.</p>
+
+            <div class="formList">
+                <ion-label position="floating">Mobile Number
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="number" formControlName="mobile" minlength=10 maxlength=10></ion-input>
+            </div>
+            <p *ngIf="!registerForm.controls.mobile.valid && (registerForm.controls.mobile.dirty || submitAttempt)" class="err-reds shake">Please enter mobile number.</p>
+
+
+
+            <div class="formList">
+                <ion-label position="floating">Password
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="password" formControlName="password"></ion-input>
+            </div>
+            <p *ngIf="!registerForm.controls.password.valid && (registerForm.controls.password.dirty || submitAttempt)" class="err-reds shake">Please enter password.</p>
+
+        </ion-list>
+    </form>
+    <div style="padding:10px;">
+        <ion-text class="loginBtn" color="cart" (click)="submit()">Create Account</ion-text>
+        <ion-text class="registerBtn">Already have an account? <span (click)="Login()">Login</span></ion-text>
+    </div>
+</ion-content>

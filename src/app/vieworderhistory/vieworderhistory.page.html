@@ -1,0 +1,158 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <!-- <ion-menu-button autoHide="false"></ion-menu-button> -->
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-title>View Order Details</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-grid *ngFor="let order of getsingleorder">
+            <ion-row>
+                <ion-col size="6"><b>Order No: {{order.order_id}}</b></ion-col>
+                <!-- <ion-col size="6" class="date" *ngIf="order.status == '1'">{{order.ordered_date | date: 'dd/MM/yyyy'}}</ion-col>
+                <ion-col size="6" class="date" *ngIf="order.status == '2'">{{order.Shipped_date | date: 'dd/MM/yyyy'}}</ion-col>
+                <ion-col size="6" class="date" *ngIf="order.status == '3'">{{order.delivered_date | date: 'dd/MM/yyyy'}}</ion-col>
+                <ion-col size="6" class="date" *ngIf="order.status == '4'">{{order.cancelled_date | date: 'dd/MM/yyyy'}}</ion-col> -->
+            </ion-row>
+            <ion-row *ngIf="order.ordered_date">
+                <ion-col size="9">
+                    <p class="TrackingNo">Ordered Date : <b>{{order.ordered_date | date: 'dd/MM/yyyy'}} {{order.ordered_time}}</b> </p>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="order.processing_date">
+                <ion-col size="9">
+                    <p class="TrackingNo">Processing Date : <b>{{order.processing_date | date: 'dd/MM/yyyy'}} {{order.processing_time}}</b> </p>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="order.Shipped_date">
+                <ion-col size="9">
+                    <p class="TrackingNo">Shipped Date : <b>{{order.Shipped_date | date: 'dd/MM/yyyy'}} {{order.Shipped_time}}</b> </p>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="order.delivered_date">
+                <ion-col size="9">
+                    <p class="TrackingNo">Delivered Date : <b>{{order.delivered_date | date: 'dd/MM/yyyy'}} {{order.delivered_time}}</b> </p>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="order.cancelled_date">
+                <ion-col size="9">
+                    <p class="TrackingNo">Cancelled Date : <b>{{order.cancelled_date | date: 'dd/MM/yyyy'}} {{order.cancelled_time}}</b> </p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="9">
+                    <p class="TrackingNo">Tracking Number : <b>IW3475433455</b> </p>
+                </ion-col>
+                <ion-col size="3" *ngIf="order.status == 1">
+                    <ion-text class="statusLabel" color="success">Processing</ion-text>
+                </ion-col>
+                <ion-col size="3" *ngIf="order.status == 2">
+                    <ion-text class="statusLabel" color="success">Shipped</ion-text>
+                </ion-col>
+                <ion-col size="3" *ngIf="order.status == 0">
+                    <ion-text class="statusLabel warningPend">Pending</ion-text>
+                </ion-col>
+                <ion-col size="3" *ngIf="order.status == 3">
+                    <ion-text class="statusLabel" color="danger">Delivered</ion-text>
+                </ion-col>
+                <ion-col size="3" *ngIf="order.status == 4">
+                    <ion-text class="statusLabel" color="danger">Cancelled</ion-text>
+                </ion-col>
+            </ion-row>
+
+            <div class="titleLabel">
+                <h3>Ordered Items</h3>
+            </div>
+            <div class="cartProduct" *ngFor="let orderdetails of order.items">
+                <div class="mycartProduct" (click)="viewProduct(orderdetails.product_id)">
+                    <div class="productImage">
+                        <ion-thumbnail slot="start">
+                            <img [src]="imgURl + orderdetails.product_image">
+                        </ion-thumbnail>
+                    </div>
+                    <div class="productContent">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="8">
+                                    <h3>{{orderdetails.product_name}}</h3>
+                                </ion-col>
+                                <ion-col size="4">
+                                    <p color="warning"><i class="fa fa-inr"></i>{{orderdetails.priceperproduct | number : '1.2-2'}}</p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="8">
+                                    <div class="quantity">
+                                        <p><span>Quantity:</span> {{orderdetails.quantity}}</p>
+                                    </div>
+                                </ion-col>
+                                <ion-col size="4" *ngIf="order.status == 1">
+                                    <span (click)="presentAlertConfirm(orderdetails.id)" class="closeBtn"><ion-icon name="close"></ion-icon></span>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="titleLabelsec">
+                <h3>Order Information</h3>
+            </div>
+            <ion-grid class="orderInfrom">
+                <ion-row>
+                    <ion-col size="5">
+                        <ion-label>Shipping Address:</ion-label>
+                    </ion-col>
+                    <ion-col size="7">
+                        <p><span>{{order.address}}, {{order.city}}, {{order.state}}-{{order.zipcode}}.</span></p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="5">
+                        <ion-label>Payment Method:</ion-label>
+                    </ion-col>
+                    <ion-col size="7">
+                        <p><span>Cash On Delivery</span></p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="5">
+                        <ion-label>Total Cost:</ion-label>
+                    </ion-col>
+                    <ion-col size="7">
+                        <p><i class="fa fa-inr"></i>{{order.totalamount | number : '1.2-2'}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <div *ngIf="order.status == 3">
+            <div class="titleLabelsec" (click)="ordereview()">
+                <h3>Order Review</h3>
+            </div>
+            <ion-grid class="orderInfrom" *ngIf = "closerating">
+                 <ion-item lines="none">
+                    <ion-label  position="stacked">Rate this item </ion-label>
+                      <rating
+                          readonly="false" 
+                          size="default" (rateChange)="onRateChange($event)">
+                    </rating>
+                 </ion-item>
+                 <ion-item lines="none">
+                    <ion-label  position="stacked">Comments</ion-label>
+                      <ion-input type="text" [(ngModel)] = "review.ratingcomments"></ion-input>
+                 </ion-item>
+                 <ion-item lines="none">
+                    <ion-button (click)="reviewsent(order.product_id)">Save</ion-button>
+                 </ion-item>
+            </ion-grid>
+        </div>
+        </ion-grid>
+    </ion-list>
+
+
+</ion-content>

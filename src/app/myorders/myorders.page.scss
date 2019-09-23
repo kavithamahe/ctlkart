@@ -1,0 +1,147 @@
+.productList {
+    margin: 10px 10px 15px;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    ion-list {
+        background: #fff;
+        ion-row {
+            ion-col {
+                vertical-align: middle;
+                p {
+                    b {
+                        color: #000;
+                    }
+                    &.text-right {
+                        text-align: end;
+                    }
+                    .amt {
+                        b {
+                            color: #000;
+                        }
+                    }
+                }
+                ion-badge {
+                    padding-top: 13px;
+                    &.text-Processing {
+                        background: #fff;
+                        color: #fca40e;
+                        font-size: 16px;
+                    }
+                    &.text-cancel {
+                        background: #fff;
+                        color: #ff0000;
+                        font-size: 16px;
+                    }
+                    &.text-Delivered {
+                        background: #fff;
+                        color: #28ad10;
+                        font-size: 16px;
+                    }
+                    &.text-right {
+                        text-align: right;
+                        float: right;
+                        margin-right: 10px;
+                    }
+                }
+                ion-button {
+                    --ion-color-base: #000000 !important;
+                    --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248) !important;
+                    --ion-color-contrast: #ffffff !important;
+                    --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 0, 0, 0) !important;
+                    --ion-color-shade: #000000 !important;
+                    --ion-color-tint: #000000 !important;
+                    --box-shadow: none !important;
+                    text-transform: capitalize;
+                    color: #fff;
+                    border: 1px solid #000;
+                    border-radius: 30px;
+                    overflow: visible;
+                    padding: 0px 8px 1px 8px;
+                    height: 36px;
+                    font-weight: 600;
+                    background: #000;
+                }
+            }
+        }
+    }
+    p {
+        color: #999;
+        font-weight: 400;
+        padding: 0px 10px 0px;
+        margin: 0;
+        // border-bottom: 1px dotted #999;
+    }
+    ion-item {
+        ion-label {
+            h3 {
+                font-size: 16px;
+                font-weight: 700;
+                padding: 10px 0px 0px;
+                color: #000;
+            }
+            p {
+                padding: 1px;
+                margin: 0;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+                color: #fca411;
+            }
+        }
+    }
+}
+
+ion-buttons {
+    ion-icon {
+        color: #000;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+.myOrderTabs {
+    padding: 20px 15px 5px;
+    ion-segment-button {
+        --border-color: transparent;
+        opacity: 1;
+        color: #999;
+        &.segment-button-checked {
+            --border-color: #000;
+            background: #f8f8f8;
+            --background: #f8f8f8;
+            color: #000;
+            --color-checked: #000000;
+            --color-checked-disabled: var(--color-checked);
+            height: 38px !important;
+            border-bottom: 2px solid #000;
+        }
+        ion-label {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+ion-label {
+    padding: 0;
+    margin: 0;
+}
+
+.viewMoreDetails {
+    border-top: 1px dotted #999;
+    margin-top: 7px;
+    ion-col {
+        text-align: right;
+        ion-text {
+            color: #fca40e;
+            text-align: end;
+            padding: 6px 10px 0px 0;
+            display: block;
+            font-size: 16px;
+            i {
+                color: #fca40e;
+                padding-left: 7px;
+            }
+        }
+    }
+}

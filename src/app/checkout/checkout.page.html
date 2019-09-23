@@ -1,0 +1,50 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="bgWhite">
+    <h3 class="loginTitle">Login</h3>
+    <div style="padding: 30px 15px 5px;">
+        <form [formGroup]="loginForm">
+            <ion-list lines="full" class="ion-no-margin loginDesign ion-no-padding">
+                <div class="formList">
+                    <ion-label position="stacked">Email
+                        <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input formControlName="email" required type="email"></ion-input>
+                </div>
+                <p *ngIf="!loginForm.controls.email.valid && (loginForm.controls.email.dirty || submitAttempt)" class="err-reds shake">Please enter email.</p>
+                <div class="formList">
+                    <ion-label position="stacked">Password
+                        <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input required type="password" formControlName="password"></ion-input>
+                </div>
+                <p *ngIf="!loginForm.controls.password.valid && (loginForm.controls.password.dirty || submitAttempt)" class="err-reds shake">Please enter password.</p>
+            </ion-list>
+        </form>
+        <div class="formList">
+            <ion-text shape="round" class="forgetPassword" expand="block" (click)="forgetpassword()">Forgot Password?</ion-text>
+        </div>
+    </div>
+    <div style="padding:10px;">
+        <ion-text class="loginBtn" color="cart" (click)="login()">Login</ion-text>
+        <ion-text *ngIf="onboard != '1'" class="registerBtn">Don't have an account? <span (click)="register()">Sign Up</span></ion-text>
+
+    </div>
+    <!-- <div *ngIf="numberverify">
+        <ion-list>
+            <ion-item>
+                <ion-label position="stacked">Mobile Number
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input [(ngModel)]="verify.mobile" required type="text"></ion-input>
+                <ion-button color="light" shape="round" expand="block" (click)="verifynumber(verify.mobile)">Verify Number</ion-button>
+            </ion-item>
+        </ion-list>
+    </div> -->
+
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons>
+        <ion-title>Add Address</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="checkoutForm" class="newAddresAdd">
+        <ion-label class="titeAddres">Address</ion-label>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <div class="formList">
+                <ion-label position="floating">Name
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input formControlName="name" required type="text"></ion-input>
+            </div>
+            <p *ngIf="!checkoutForm.controls.name.valid && (checkoutForm.controls.name.dirty || submitAttempt)" class="err-reds shake">Please enter name.</p>
+
+            <div class="formList">
+                <ion-label position="floating">Mobile Number
+                    <ion-text color="danger" type="number">*</ion-text>
+                </ion-label>
+                <ion-input formControlName="mobile" required type="text"></ion-input>
+            </div>
+            <p *ngIf="!checkoutForm.controls.mobile.valid && (checkoutForm.controls.mobile.dirty || submitAttempt)" class="err-reds shake">Please enter mobile.</p>
+
+            <div class="formList">
+                <ion-label position="floating">Flat No / Area / Street
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input formControlName="address" required type="text"></ion-input>
+            </div>
+            <p *ngIf="!checkoutForm.controls.address.valid && (checkoutForm.controls.address.dirty || submitAttempt)" class="err-reds shake">Please enter address.</p>
+
+            <div class="formList">
+                <ion-label position="floating">Landmark
+                </ion-label>
+                <ion-input required type="text" formControlName="landmark"></ion-input>
+            </div>
+            <div class="formList">
+                <ion-label position="floating">City
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="city"></ion-input>
+            </div>
+            <p *ngIf="!checkoutForm.controls.city.valid && (checkoutForm.controls.city.dirty || submitAttempt)" class="err-reds shake">Please enter city.</p>
+
+            <div class="formList">
+                <ion-label position="floating">State
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="state"></ion-input>
+            </div>
+            <p *ngIf="!checkoutForm.controls.state.valid && (checkoutForm.controls.state.dirty || submitAttempt)" class="err-reds shake">Please enter state.</p>
+
+            <div class="formList">
+                <ion-label position="floating">Zipcode
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="number" formControlName="zipcode"></ion-input>
+            </div>
+            <p *ngIf="!checkoutForm.controls.zipcode.valid && (checkoutForm.controls.zipcode.dirty || submitAttempt)" class="err-reds shake">Please enter zipcode.</p>
+
+        </ion-list>
+
+        <ion-list>
+            <ion-label class="titeAddressType">Address Type
+                <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-list>
+                <ion-radio-group (ionChange)="radioGroupChange($event)">
+                    <ion-item>
+                        <ion-label>Home</ion-label>
+                        <ion-radio slot="start" color="dark" value="home" formControlName="address_type"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Work</ion-label>
+                        <ion-radio slot="start" color="dark" value="work" formControlName="address_type"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-list>
+            <!-- <ion-input required type="text" formControlName="address_type"></ion-input> -->
+            <p *ngIf="!checkoutForm.controls.address_type.valid && (checkoutForm.controls.address_type.dirty || submitAttempt)" class="err-reds shake">Please select address type.</p>
+
+        </ion-list>
+    </form>
+    <div style="padding:10px; background: #fff;">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-text class="cancelBtn" color="cart" (click)="back()">Cancel</ion-text>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-text class="loginBtn" color="cart" (click)="submitaddress()">Save</ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!-- <ion-text class="loginBtn" color="cart" (click)="submitaddress()">Save</ion-text> -->
+    </div>
+    <br>
+</ion-content>

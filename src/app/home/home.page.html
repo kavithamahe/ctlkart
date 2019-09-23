@@ -1,0 +1,10 @@
+
+
+<ion-content class="main-Dashboard">
+  <div class="ion-padding">
+    <ion-item class= "otpinputitem">
+      <ion-input class= "otpinput" type="text" placeholder="mobile otp" [(ngModel)]="employee.mobileotp"></ion-input>
+    </ion-item>
+    <ion-button (click)="otpsend(employee.mobileotp)">Submit</ion-button>
+  </div>
+</ion-content>

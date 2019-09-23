@@ -1,0 +1,58 @@
+<ion-header no-border-bottom>
+    <ion-toolbar>
+        <!-- <ion-buttons slot="start">
+            <ion-icon name="arrow-back" (click)="back()"></ion-icon>
+        </ion-buttons> -->
+        <ion-title>My Profile</ion-title>
+        <ion-buttons slot="end" (click)="editProfile()">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="Myprofile">
+    <div class="profile-edit">
+        <span class="profile-img">
+                <img *ngIf = "profile_image" [src]="imageUrl + profile_image"/>
+                  <img *ngIf = "!profile_image" src="../../assets/img/icon.png"/>
+                </span>
+        <p class="name" text-capitalize>{{name}} {{lastname}}</p>
+        <p class="mail">{{email}}</p>
+        <p class="mobile">+91 {{mobile}}</p>
+
+    </div>
+    <div class="profile-view">
+        <div class="listed-profiles" color="mistyrose">
+            <p (click)="changepassword()">
+                <ion-icon name="lock"></ion-icon>Change Password</p>
+            <p (click)="address()">
+                <ion-icon name="pin"></ion-icon>Manage Addresses</p>
+            <p (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>Logout</p>
+            <!-- <p (click)="deleteaccount()">
+                <ion-icon name="exit"></ion-icon>Delete Account</p> -->
+        </div>
+    </div>
+    <!-- <ion-list>
+        <ion-list-header>Single Selection</ion-list-header>
+      
+        <ion-item>
+          <ion-label>Country</ion-label>
+          <ion-select placeholder="Select One" (ionChange)="currencychange()" [(ngModel)]= "currency.currencyvalue">
+            <ion-select-option value="Australia">Australia</ion-select-option>
+            <ion-select-option value="Bangladesh">Bangladesh</ion-select-option>
+            <ion-select-option value="Brazil">Brazil</ion-select-option>
+            <ion-select-option value="Bhutan">Bhutan</ion-select-option>
+            <ion-select-option value="Switzerland">Switzerland</ion-select-option>
+            <ion-select-option value="Denmark">Denmark</ion-select-option>
+            <ion-select-option value="Germany">Germany</ion-select-option>
+            <ion-select-option value="India">India</ion-select-option>
+            <ion-select-option value="United States Of America">United States Of America</ion-select-option>
+            <ion-select-option value="China">China</ion-select-option>
+            <ion-select-option value="France">France</ion-select-option>
+          </ion-select>
+        </ion-item>
+    </ion-list> -->
+
+</ion-content>

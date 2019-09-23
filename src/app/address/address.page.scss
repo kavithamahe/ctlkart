@@ -1,0 +1,139 @@
+ion-buttons {
+    ion-icon {
+        color: #000;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+.addressField {
+    margin-bottom: 120px;
+    ion-grid {
+        ion-row {
+            ion-col {
+                ion-list {
+                    padding: 0 !important;
+                    ion-radio-group {
+                        width: 100%;
+                        ion-list-header {
+                            ion-label {
+                                color: #000;
+                                font-size: 20px;
+                            }
+                        }
+                        ion-item {
+                            border: none !important;
+                            ion-label {
+                                span {
+                                    width: 100%;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-item {
+    border: none !important;
+    ion-label {
+        color: #333;
+        line-height: 20px;
+        text-align: left;
+        font-size: 15px;
+        span {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+.deliveryLabel {
+    color: #000;
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+// .addAddress {
+//     display: inline-block;
+//     background: #fff;
+//     color: #000000;
+//     padding: 10px 15px;
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+//     text-align: center;
+//     border-radius: 5px;
+//     border: 1px solid #000;
+//     float: right;
+//     margin: 0px 5px 30px 0px;
+// }
+.shippingAddressGroup {
+    display: flex;
+    background: #fff;
+    ion-label {
+        width: 90%;
+        span {
+            color: #444;
+            padding-bottom: 1px;
+            line-height: 22px;
+            text-align: left;
+            text-transform: capitalize;
+            b {
+                color: #000000;
+            }
+            &.wdt100 {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+.edit-btn {
+    text-align: center;
+    color: #fca411;
+    font-weight: 500;
+    padding: 2px 0;
+    font-size: 15px;
+}
+
+.addressbox {
+    background: #fff;
+    padding: 15px 3px 6px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.useAddress {
+    padding: 15px 0px 0;
+    vertical-align: middle;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    span {
+        padding-left: 10px;
+        color: #444;
+    }
+}
+
+.addCircle {
+    --background: #fca411;
+}
+
+ion-fab {
+    bottom: 75px;
+    box-shadow: none;
+}
+
+.hightlight {
+    background-color: yellow;
+}
+
+.brd-top {
+    border-bottom: 1px solid #e4e4e4 !important;
+    padding-bottom: 15px;
+}
